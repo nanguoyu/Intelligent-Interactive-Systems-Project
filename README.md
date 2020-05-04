@@ -22,7 +22,7 @@ implement an end-to-end learning version of this system, where we combine the la
 extraction and gesture recognition modules system into sub-system. We then intend to
 compare the performance of these two systems.
 
-
+![rule](./figures/rule.png)
 
 ## TODO
 

@@ -7,4 +7,3 @@ The tests for Intelligent Interactive Systems Project are in this directory.
  - [ ] landmark detection system
  - [ ] gesture recognition system
  - [ ] An end-to-end system
- 
