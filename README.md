@@ -2,71 +2,40 @@
 
 # Intelligent Interactive Systems Project
 
-[![Build Status](https://travis-ci.com/nanguoyu/SemiFlow.svg?branch=master)](https://travis-ci.com/nanguoyu/SemiFlow)
-[![codecov](https://codecov.io/gh/nanguoyu/SemiFlow/branch/master/graph/badge.svg)](https://codecov.io/gh/nanguoyu/SemiFlow)
+[![Build Status](https://travis-ci.com/nanguoyu/Intelligent-Interactive-Systems-Project.svg?branch=master)](https://travis-ci.com/nanguoyu/Intelligent-Interactive-Systems-Project)
+[![codecov](https://codecov.io/gh/nanguoyu/Intelligent-Interactive-Systems-Project/branch/master/graph/badge.svg)](https://codecov.io/gh/nanguoyu/Intelligent-Interactive-Systems-Project)
 
 
-SemiFlow is a neural network framework for machine learning.
+.
 
 I am going to implement a neural network framework in a about month. :)
 
-> SemiFlow是一个从零(严格来说是numpy)开始的神经网络框架的。我已经使用Tensorflow和keras好些年，
-并且最近完成了"Statistical machine learning", "Artificial intelligence","Natural computation 
-for machine learning"。我对自己动手实现深度学习框架很感兴趣。SemiFlow就是用来练手的。
+## What's this
 
-## Install
-
-``` 
-git https://github.com/nanguoyu/SemiFlow.git
-cd SemiFlow
-pip install .
-```
-
-## A naive example.
-Blogs
- - [[SemiFlow 动手实现深度学习框架 00] 初步的计划](https://www.nanguoyu.com/semiflow-00)
-    - Code: [A naive dense layer](./A%20naive%20example)
- - [[SemiFlow 动手实现深度学习框架 01] 从一个例子开始](https://www.nanguoyu.com/semiflow-01)
-
-Code: [A naive dense layer](./A%20naive%20example)
-
-## Tensorflow style design
-Progress
-- [x] computational graph
-    - [x] feedforward
-    - [x] numpy style operator
-    - [x] compute gradient
-- [ ] Tensor support
-- [x] Auto differentiate
-
-## Sequential Model 
-> In the development, I find it is hard for me to implement a deep learning 
-> framework support functional model like the Pytorch. As a result, I changed
-> the plan to develop a sequential model after finish tensorflow style design.
-
->Progress
-- [ ] Dense layer
-- [ ] Model manager for training
-- [ ] Optimizer
-- [ ] Activation function
-    - [x] ReLU
-    - [x] Sigmoid
-    - [x] tanh
-## Complex layer
-Progress
-- [ ] Convolutional layer
-- [ ] Pooling layer
-- [ ] Stochastic gradient descent
+We aim to create an intelligent interactive system that can take a video input,
+nd the locations of a number of landmarks of a hand in the video, use these landmarks
+to recognize the gesture made by the hand, and allow an virtual agent to respond to the
+gesture made. In our case decided to allow the user to play a game of 'Rock, Paper,
+Scissors, Lizard, Spock with agent'. The agent randomly picks a sign and compares it to
+gesture detected and responds to the results of the game. In addition to this we aim to
+implement an end-to-end learning version of this system, where we combine the landmark
+extraction and gesture recognition modules system into sub-system. We then intend to
+compare the performance of these two systems.
 
 
-## Big dataset support
-- [ ] Train MNIST
 
-## Advance 
-- [ ] CUDA support
+## TODO
 
-## Support Docs
-- [ ] Examples and other docs
+### Foundational part.
+- [ ] A landmark detection system
+- [ ] A machine learning based gesture recognition system
+- [ ] A Kotlin program to control [Furhat](https://furhatrobotics.com/) Robot
+- [ ] An API for communication between the Kotlin program and Python Backend
+
+### Specialization part.
+- [ ] An end-to-end system (CNN) 
+
+**Note** We may update above todo list
 
 ## Reference
 - [The Supervised Machine Learning book(An upcoming textbook)](http://smlbook.org/)
