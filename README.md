@@ -23,7 +23,7 @@ extraction and gesture recognition modules system into sub-system. We then inten
 compare the performance of these two systems.
 
 <div align="center">
-    <img src="./figures/rule.png">
+    <img src=".github/rule.png">
 </div>
 
 ## TODO
