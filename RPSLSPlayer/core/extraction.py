@@ -17,7 +17,7 @@ class extraction(object):
         lE = landmarkExtraction(model)
         for frame in videos:
             landmarks = lE.extract(frame)
-            print("We get landmarks are :", landmarks)
+            print("The landmarks are :", landmarks)
 
         """
         self.model = model
