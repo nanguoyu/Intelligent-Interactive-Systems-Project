@@ -6,7 +6,6 @@
 from flask import Flask, request
 import base64
 import numpy as np
-import cv2
 from . import __version__
 
 app = Flask(__name__)
