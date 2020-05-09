@@ -34,4 +34,8 @@ cols = ['palm_root_x', 'palm_root_y', 'palm_thumb_1_x', 'palm_thumb_1_y',
         'dorsal_pinky_2_x', 'dorsal_pinky_2_y', 'dorsal_pinky_3_x',
         'dorsal_pinky_3_y', 'dorsal_pinky_4_x', 'dorsal_pinky_4_y']
 
+gestures = ['fist_dorsal', 'fist_palm', 'open_dorsal',
+            'open_palm', 'three_fingers_dorsal', 'three_fingers_palm']
+
 Sub1Model = './model/Sub1-weights-best.hdf5'
+end2endModel = './model/End2endWeights-best.hdf5'

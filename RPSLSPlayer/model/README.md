@@ -5,4 +5,4 @@ The models for Intelligent Interactive Systems Project are in this directory.
  - [x] Example directory
  - [x] landmark detection model
  - [ ] gesture recognition model
- - [ ] An end-to-end model
+ - [x] An end-to-end model
