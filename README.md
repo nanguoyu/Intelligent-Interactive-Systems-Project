@@ -29,10 +29,10 @@ compare the performance of these two systems.
 ## TODO
 
 ### Foundational part.
-- [ ] A landmark detection system
+- [x] A landmark detection system
 - [ ] A machine learning based gesture recognition system
 - [ ] A Kotlin program to control [Furhat](https://furhatrobotics.com/) Robot
-- [ ] An API for communication between the Kotlin program and Python Backend
+- [x] An API for communication between the Kotlin program and Python Backend
 
 ### Specialization part.
 - [ ] An end-to-end system (CNN) 
