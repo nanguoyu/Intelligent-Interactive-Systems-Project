@@ -8,7 +8,7 @@ import setuptools
 
 setuptools.setup(
     name='RPSLSPlayer',
-    version='0.1.0',
+    version='0.1.1',
     description='The project of group 6 for 1MD032 at Uppsala University, 2020 VT.',
     url='https://github.com/nanguoyu/Intelligent-Interactive-Systems-Project',
     license='MIT',

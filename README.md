@@ -6,10 +6,14 @@
 [![codecov](https://codecov.io/gh/nanguoyu/Intelligent-Interactive-Systems-Project/branch/master/graph/badge.svg)](https://codecov.io/gh/nanguoyu/Intelligent-Interactive-Systems-Project)
 
 
+.
+
+I am going to implement a neural network framework in a about month. :)
+
 ## What's this
 
 We aim to create an intelligent interactive system that can take a video input,
-find the locations of a number of landmarks of a hand in the video, use these landmarks
+nd the locations of a number of landmarks of a hand in the video, use these landmarks
 to recognize the gesture made by the hand, and allow an virtual agent to respond to the
 gesture made. In our case decided to allow the user to play a game of 'Rock, Paper,
 Scissors, Lizard, Spock with agent'. The agent randomly picks a sign and compares it to

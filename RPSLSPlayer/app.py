@@ -5,10 +5,19 @@
 """
 from flask import Flask, request
 import base64
+from io import BytesIO
 import numpy as np
 from . import __version__
+from .core.extraction import landmarkExtraction, Image, img_to_array
 
+# Model Path
+Sub1Model = './RPSLSPlayer/model/Sub1-weights-best.hdf5'
+
+#
 app = Flask(__name__)
+
+
+lE = landmarkExtraction(Sub1Model)
 
 
 @app.route('/')
@@ -21,9 +30,15 @@ def gesture():
     image = request.form.get('image')
     if not image:
         return 'not found image file'
-    img = base64.b64decode(str(image))
-    image_data = np.fromstring(img, np.uint8)
+    IM = Image.open(BytesIO(base64.b64decode(image)))
+    # SubSystem 1
+    re1 = lE.extract(IM)
+    if re1['code'] == 200:
+        keypoints = re1['keypoints']
+    else:
+        keypoints = None
 
-    # Here we should do something to recognize the image_data
-
-    return {'code': 200, 'gesture': 'open_palm'}
+    # SubSystem 2
+    # TODO SubSystem
+    response = {'code': 200, 'gesture': 'open_palm', 'keypoints': keypoints}
+    return response
