@@ -6,14 +6,11 @@
 [![codecov](https://codecov.io/gh/nanguoyu/Intelligent-Interactive-Systems-Project/branch/master/graph/badge.svg)](https://codecov.io/gh/nanguoyu/Intelligent-Interactive-Systems-Project)
 
 
-.
-
-I am going to implement a neural network framework in a about month. :)
 
 ## What's this
 
 We aim to create an intelligent interactive system that can take a video input,
-nd the locations of a number of landmarks of a hand in the video, use these landmarks
+find the locations of a number of landmarks of a hand in the video, use these landmarks
 to recognize the gesture made by the hand, and allow an virtual agent to respond to the
 gesture made. In our case decided to allow the user to play a game of 'Rock, Paper,
 Scissors, Lizard, Spock with agent'. The agent randomly picks a sign and compares it to
@@ -35,7 +32,10 @@ compare the performance of these two systems.
 - [x] An API for communication between the Kotlin program and Python Backend
 
 ### Specialization part.
-- [ ] An end-to-end system (CNN) 
+- [x] An end-to-end system (CNN) 
+
+#### Demo
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/I9NC9vfVFQM/0.jpg)](https://www.youtube.com/watch?v=I9NC9vfVFQM)
 
 **Note** We may update above todo list
 
