@@ -13,7 +13,7 @@ from .core.end2end import end2endGesture
 
 # Model Path
 Sub1Model = './RPSLSPlayer/model/Sub1-weights-best.hdf5'
-end2endModel = './model/End2endWeights-best.hdf5'
+end2endModel = './RPSLSPlayer/model/End2endWeights-best.hdf5'
 #
 app = Flask(__name__)
 
@@ -51,7 +51,6 @@ def end2end():
     if not image:
         return 'not found image file'
     IM = Image.open(BytesIO(base64.b64decode(image)))
-    # SubSystem 1
     re1 = eG.recognize(IM)
     if re1['code'] == 200:
         gesture = re1['gesture']
@@ -59,5 +58,5 @@ def end2end():
     else:
         gesture = None
         probability = None
-    response = {'code': 200, 'gesture': gesture, 'probability': probability}
+    response = {'code': 200, 'gesture': gesture, 'probability': str(probability)}
     return response
