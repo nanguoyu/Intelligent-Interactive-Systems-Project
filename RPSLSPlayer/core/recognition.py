@@ -3,6 +3,11 @@
 @Author: Dong Wang
 @Date : 2020/5/5
 """
+from . import load_model, gestures, Sub2Model
+from PIL import Image
+import numpy as np
+import six
+import os
 
 
 class recognition(object):
@@ -35,8 +40,27 @@ class recognition(object):
 
 
 class gestureRecognition(recognition):
-    def __init__(self, model):
+    def __init__(self, model=Sub2Model):
+        model = load_model(model)
         super(gestureRecognition, self).__init__(model=model)
 
     def recognize(self, landmark):
-        pass
+        response = {'code': 200}
+        if len(landmark) != 80:
+            response['code'] = 401
+            return response
+        elif isinstance(landmark, np.ndarray):
+            # Img is Image type
+            response['code'] = 200
+            response['gesture'], response['probability'] = self.predict(landmark)
+        else:
+            response['code'] = 402
+        return response
+
+    def predict(self, pointsArray):
+        if len(pointsArray.shape) == 1:
+            pointsArray = np.array([pointsArray])
+        pred = self.model.predict(pointsArray)[0]
+        index = int(np.argmax(pred))
+        gesture = gestures[index]
+        return gesture, pred[index]

@@ -17,5 +17,7 @@ def test_post_image(img_file, URL):
 
 
 if __name__ == '__main__':
-    # print(test_post_image('open_dorsal.jpg', 'http://127.0.0.1:5000/gesture'))
+    print("Test sub system 1 and sub system 2")
+    print(test_post_image('open_dorsal.jpg', 'http://127.0.0.1:5000/gesture'))
+    print("Test the end2end system")
     print(test_post_image('open_dorsal.jpg', 'http://127.0.0.1:5000/end2end'))

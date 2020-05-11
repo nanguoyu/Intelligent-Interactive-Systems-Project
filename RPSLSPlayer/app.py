@@ -9,16 +9,19 @@ from io import BytesIO
 import numpy as np
 from . import __version__
 from .core.extraction import landmarkExtraction, Image, img_to_array
+from .core.recognition import gestureRecognition
 from .core.end2end import end2endGesture
 
 # Model Path
 Sub1Model = './RPSLSPlayer/model/Sub1-weights-best.hdf5'
+Sub2Model = './RPSLSPlayer/model/Sub2-weights.hdf5'
 end2endModel = './RPSLSPlayer/model/End2endWeights-best.hdf5'
 #
 app = Flask(__name__)
 
 lE = landmarkExtraction(Sub1Model)
 eG = end2endGesture(end2endModel)
+gR = gestureRecognition(Sub2Model)
 
 
 @app.route('/')
@@ -38,10 +41,23 @@ def gesture():
         keypoints = re1['keypoints']
     else:
         keypoints = None
-
+    if not keypoints:
+        response = {'code': re1['code']}
+        return response
     # SubSystem 2
-    # TODO SubSystem
-    response = {'code': 200, 'gesture': 'open_palm', 'keypoints': keypoints}
+    landmark = keypoints.values()
+    re2 = gR.recognize(np.array(list(landmark)))
+    if re2['code'] == 200:
+        gesture = re2['gesture']
+        probability = re2['probability']
+    else:
+        gesture = None
+        probability = None
+
+    if not gesture:
+        response = {'code': re2['code'],'landmark':str(type(landmark))}
+        return response
+    response = {'code': 200, 'gesture': str(gesture),'probability': str(probability)}
     return response
 
 

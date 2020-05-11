@@ -38,4 +38,5 @@ gestures = ['fist_dorsal', 'fist_palm', 'open_dorsal',
             'open_palm', 'three_fingers_dorsal', 'three_fingers_palm']
 
 Sub1Model = './model/Sub1-weights-best.hdf5'
+Sub2Model = './model/Sub2-weights.hdf5'
 end2endModel = './model/End2endWeights-best.hdf5'

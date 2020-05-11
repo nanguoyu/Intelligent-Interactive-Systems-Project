@@ -14,6 +14,7 @@ def test_sub1_model():
     img = load_img(imageFile)
     re = lE.extract(img)
     print(re)
+    print(list(re['keypoints'].values()))
 
 
 if __name__ == '__main__':
