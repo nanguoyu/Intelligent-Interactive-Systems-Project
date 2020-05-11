@@ -36,4 +36,3 @@ val_loss, val_acc = model.evaluate(X_test, y_test)
 print(val_loss, val_acc)
 model.save("Sub2-weights.hdf5")
 
-result = model.predict(X_test.iloc[0].)[0]
