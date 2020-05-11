@@ -5,17 +5,18 @@
 """
 from flask import Flask, request
 import base64
+import os
 from io import BytesIO
 import numpy as np
 from . import __version__
-from .core.extraction import landmarkExtraction, Image, img_to_array
+from .core.extraction import landmarkExtraction, Image
 from .core.recognition import gestureRecognition
 from .core.end2end import end2endGesture
 
 # Model Path
-Sub1Model = 'RPSLSPlayer/model/Sub1-weights-best.hdf5'
-Sub2Model = 'RPSLSPlayer/model/Sub2-weights.hdf5'
-end2endModel = 'RPSLSPlayer/model/End2endWeights-best.hdf5'
+Sub1Model = str(os.getcwd()).replace("\\", "/")+'/'+'RPSLSPlayer/model/Sub1-weights-best.hdf5'
+Sub2Model = str(os.getcwd()).replace("\\", "/")+'/'+'RPSLSPlayer/model/Sub2-weights.hdf5'
+end2endModel = str(os.getcwd()).replace("\\", "/")+'/'+'RPSLSPlayer/model/End2endWeights-best.hdf5'
 #
 app = Flask(__name__)
 
