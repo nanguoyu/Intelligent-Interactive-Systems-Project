@@ -1,0 +1,25 @@
+language: python
+
+notifications:
+  email: false
+
+python:
+  - 3.7
+
+before_install:
+  - pip3 install pytest
+  - pip3 install codecov
+
+install:
+  - pip install -r requirements.txt
+  - pip install .
+
+script:
+  - ./start_app_macos.sh
+  - pytest
+  - coverage run -p ./tests/test_sub1_model.py
+  - coverage run -p ./tests/test_end2end_model.py
+  - coverage combine
+
+after_success:
+  - codecov
