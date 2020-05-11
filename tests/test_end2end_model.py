@@ -10,7 +10,7 @@ import pytest
 def test_end2end_model():
     # Model Path
     imageFile = 'fist_dorsal.jpg'
-    eG = end2endGesture(model='./End2endWeights-best.hdf5')
+    eG = end2endGesture(model='End2endWeights-best.hdf5')
     img = load_img(imageFile)
     re = eG.recognize(img)
     print(re)

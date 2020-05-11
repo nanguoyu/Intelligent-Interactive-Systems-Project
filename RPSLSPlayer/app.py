@@ -13,9 +13,9 @@ from .core.recognition import gestureRecognition
 from .core.end2end import end2endGesture
 
 # Model Path
-Sub1Model = './RPSLSPlayer/model/Sub1-weights-best.hdf5'
-Sub2Model = './RPSLSPlayer/model/Sub2-weights.hdf5'
-end2endModel = './RPSLSPlayer/model/End2endWeights-best.hdf5'
+Sub1Model = 'RPSLSPlayer/model/Sub1-weights-best.hdf5'
+Sub2Model = 'RPSLSPlayer/model/Sub2-weights.hdf5'
+end2endModel = 'RPSLSPlayer/model/End2endWeights-best.hdf5'
 #
 app = Flask(__name__)
 
