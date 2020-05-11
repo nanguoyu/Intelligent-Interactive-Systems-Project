@@ -1,6 +1,6 @@
 pytest==5.4.2
 opencv_python==4.2.0.32
-Flask==1.1.1
+Flask==1.1.2
 six==1.14.0
 requests==2.23.0
 numpy==1.18.4
