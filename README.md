@@ -27,7 +27,7 @@ compare the performance of these two systems.
 
 ### Foundational part.
 - [x] A landmark detection system
-- [ ] A machine learning based gesture recognition system
+- [x] A machine learning based gesture recognition system
 - [ ] A Kotlin program to control [Furhat](https://furhatrobotics.com/) Robot
 - [x] An API for communication between the Kotlin program and Python Backend
 
