@@ -13,7 +13,9 @@ before_install:
 install:
   - pip install -r requirements.txt
   - pip install .
-
+  - wget -P model https://github.com/nanguoyu/Intelligent-Interactive-Systems-Project/releases/download/latest/End2endWeights-best.hdf5
+  - wget -P model https://github.com/nanguoyu/Intelligent-Interactive-Systems-Project/releases/download/0.1/Sub1-weights-best.hdf5
+  - wget -P model https://github.com/nanguoyu/Intelligent-Interactive-Systems-Project/releases/download/0.1/Sub2-weights.hdf5
 script:
   - chmod +x ./start_app_macos.sh
   - ./start_app_macos.sh

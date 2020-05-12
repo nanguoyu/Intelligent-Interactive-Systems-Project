@@ -10,7 +10,7 @@ import pytest
 def test_sub1_model():
     # Model Path
     imageFile = 'fist_dorsal.jpg'
-    lE = landmarkExtraction(model='Sub1-weights-best.hdf5')
+    lE = landmarkExtraction(model='../model/Sub1-weights-best.hdf5')
     img = load_img(imageFile)
     re = lE.extract(img)
     print(re)
