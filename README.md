@@ -14,6 +14,7 @@ As following images showing, there are 'fist_dorsal', 'fist_palm', 'open_dorsal'
 
 ## Quick start
 1. Install Opencv
+
  You should install Opencv in your environment.
 
 2. git clone this project 
