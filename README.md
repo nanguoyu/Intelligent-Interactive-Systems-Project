@@ -8,24 +8,60 @@
 
 
 ## What's this
+This project aims to recognize 6 pre-defined gestures from videos.
+As following images showing, there are 'fist_dorsal', 'fist_palm', 'open_dorsal', 'open_palm', 'three_fingers_dorsal', 'three_fingers_palm'.
+![](.github/IIS_Project_gestures_example.png)
 
-We aim to create an intelligent interactive system that can take a video input,
-find the locations of a number of landmarks of a hand in the video, use these landmarks
-to recognize the gesture made by the hand, and allow an virtual agent to respond to the
-gesture made. In our case decided to allow the user to play a game of 'Rock, Paper,
-Scissors, Lizard, Spock with agent'. The agent randomly picks a sign and compares it to
-gesture detected and responds to the results of the game. In addition to this we aim to
-implement an end-to-end learning version of this system, where we combine the landmark
-extraction and gesture recognition modules system into sub-system. We then intend to
-compare the performance of these two systems.
+## Quick start
+1. Install Opencv
+ You should install Opencv in your environment.
 
-<div align="center">
-    <img src=".github/rule.png">
-</div>
+2. git clone this project 
 
-## TODO
+    ``` Python 
+    git clone https://github.com/nanguoyu/Intelligent-Interactive-Systems-Project.git
+    cd Intelligent-Interactive-Systems-Project
+    pip install -r requirements.txt
+    pip install .
+    ```
 
-### Foundational part.
+3. Download pre-trained models
+    ```
+    python DownloadWeights.py
+    ```
+
+3. Start the API system and its extraction and recognition server:
+
+    If your environment is windows 64, you should run [**start_app_win64.bat**](start_app_win64.bat) and do not close its window.
+    
+    If your environment is mac os/ linux, you should run [**start_app_macos.sh**](start_app_macos.sh) and do not close its window.
+
+4. Run tests
+    ```
+    python tests/test_app.py
+    ```
+   You can check tests/test_app.py to send your image 
+   to recognize gestures.
+   
+   ``` Python
+   import base64
+   import json
+   import requests
+   
+   img_file = "open_dorsal.jpg"
+   # URL = 'http://127.0.0.1:5000/gesture'
+   URL = 'http://127.0.0.1:5000/end2end'
+   """ post image and return the response """
+   with open(img_file, 'rb') as f:
+       img = base64.b64encode(f.read()).decode()
+   response = requests.post(URL, data={"image": img})
+   return json.loads(response.content.decode('utf-8'))
+   ```
+
+
+## Features
+Bases on a unpublished data set, we are implementing these parts.
+### landmark detection and gesture recognition
 - [x] A landmark detection system
 - [x] A machine learning based gesture recognition system
 - [ ] A Kotlin program to control [Furhat](https://furhatrobotics.com/) Robot
@@ -34,11 +70,15 @@ compare the performance of these two systems.
 ### Specialization part.
 - [x] An end-to-end system (CNN) 
 
-#### Demo
+<div align="center">
+    <img src=".github/rule.png">
+</div>
+
+
+#### Demo for the end2end detection model
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/I9NC9vfVFQM/0.jpg)](https://www.youtube.com/watch?v=I9NC9vfVFQM)
 
-**Note** We may update above todo list
 
 ## Reference
 - [The Supervised Machine Learning book(An upcoming textbook)](http://smlbook.org/)
-- [simpleflow](https://github.com/PytLab/simpleflow)
+- [SemiFlow](https://github.com/nanguoyu/SemiFlow)

@@ -7,7 +7,6 @@ import sys
 import requests
 import os
 
-# 屏蔽warning信息
 requests.packages.urllib3.disable_warnings()
 
 
