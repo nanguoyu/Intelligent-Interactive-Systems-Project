@@ -56,7 +56,7 @@ As following images showing, there are 'fist_dorsal', 'fist_palm', 'open_dorsal'
    with open(img_file, 'rb') as f:
        img = base64.b64encode(f.read()).decode()
    response = requests.post(URL, data={"image": img})
-   return json.loads(response.content.decode('utf-8'))
+   print(json.loads(response.content.decode('utf-8')))
    ```
 
 
