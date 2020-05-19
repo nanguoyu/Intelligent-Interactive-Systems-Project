@@ -1,10 +1,11 @@
 from tensorflow.keras import Sequential
-from tensorflow.keras.layers import Dense, Input
+from tensorflow.keras.layers import Dense, Input, Dropout
 from tensorflow.keras.optimizers import Adam
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from keras.utils import to_categorical
 import pandas as pd
+from matplotlib import pyplot as plt
 
 filepath = "Dataset_Subsystem_2.csv"
 data = pd.read_csv(filepath)
@@ -18,21 +19,41 @@ label_encoder = LabelEncoder()
 Y = label_encoder.fit_transform(Y)
 Y = to_categorical(Y)
 
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.33, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.10, random_state=42)
 print(X_test.iloc[0])
+
+
 model = Sequential()
 model.add(Input(shape=(80,)))
-model.add(Dense(100, activation='relu'))
+model.add(Dense(8, activation='relu'))
 model.add(Dense(6, activation='softmax'))
 model.build()
-print(model.summary())
-adam = Adam(lr=0.01)
+adam = Adam(lr=0.001)
 model.compile(optimizer=adam, loss='categorical_crossentropy', metrics=['accuracy'])
 
-history = model.fit(X_train, y_train, epochs=3, batch_size=8, validation_split=0.2)
+history = model.fit(X_train, y_train, epochs=30, batch_size=8, validation_split=1/9) # 80 % train 10 % validation, 10 % test
 print(history)
 val_loss, val_acc = model.evaluate(X_test, y_test)
-
 print(val_loss, val_acc)
-model.save("Sub2-weights.hdf5")
 
+training_loss = history.history['loss']
+test_loss = history.history['val_loss']
+
+
+# Create count of the number of epochs
+epoch_count = range(1, len(training_loss) + 1)
+
+# Visualize loss history
+plt.plot(epoch_count, training_loss, 'r--')
+plt.plot(epoch_count, test_loss, 'b-')
+plt.legend(['Training Loss', 'Test Loss'])
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.show();
+
+model.save("../RPSLSPlayer/model/Sub2-weights2-best.hdf5")
+
+
+print("Model 1")
+print(history)
+print(val_loss, val_acc)
