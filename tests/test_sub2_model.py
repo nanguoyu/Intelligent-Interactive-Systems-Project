@@ -14,7 +14,7 @@ landmark = np.array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 
 
 def test_sub2_model():
-    gR = gestureRecognition(model='../model/Sub2-weights.hdf5')
+    gR = gestureRecognition(model='../model/Sub2-weights-best.hdf5')
     re = gR.recognize(landmark)
     print(re)
 

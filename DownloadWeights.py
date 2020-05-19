@@ -36,7 +36,7 @@ def download(url, file_path):
 
 if __name__ == '__main__':
     url = "https://github.com/nanguoyu/Intelligent-Interactive-Systems-Project/releases/latest/download/"
-    models = ["End2endWeights-best.hdf5", "Sub1-weights-best.hdf5", "Sub2-weights.hdf5"]
+    models = ["End2endWeights-best.hdf5", "Sub1-weights-best.hdf5", "Sub2-weights-best.hdf5"]
     folder = "model/"
     for model in models:
         print("[Downloader]: ", url + model)
