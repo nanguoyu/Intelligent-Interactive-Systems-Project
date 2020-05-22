@@ -1,7 +1,7 @@
 pytest==5.4.2
 opencv_python==4.2.0.34
 Flask==1.1.2
-six==1.14.0
+six==1.15.0
 requests==2.23.0
 numpy==1.18.4
 Pillow==7.1.2
