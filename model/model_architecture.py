@@ -6,6 +6,7 @@ from sklearn.preprocessing import LabelEncoder
 from keras.utils import to_categorical
 import pandas as pd
 from matplotlib import pyplot as plt
+import sklearn as sk
 
 filepath = "Dataset_Subsystem_2.csv"
 data = pd.read_csv(filepath)
@@ -57,3 +58,14 @@ model.save("../RPSLSPlayer/model/Sub2-weights2-best.hdf5")
 print("Model 1")
 print(history)
 print(val_loss, val_acc)
+
+# Confusion matrix and classification report
+predictions = model.predict(X_test)
+y_pred = np.argmax(predictions, axis=1)
+y_true = np.argmax(y_test, axis=1)
+print('Confusion Matrix')
+print(sk.metrics.confusion_matrix(y_true, y_pred))
+print('Classification Report')
+target_names = ['fistdorsal', 'fistpalm', 'opendorsal', 'openpalm',
+       'three_fingersdorsal', 'three_fingerspalm']
+print(sk.metrics.classification_report(y_true, y_pred, target_names=target_names))
