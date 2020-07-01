@@ -3,6 +3,6 @@ opencv_python==4.2.0.34
 Flask==1.1.2
 six==1.15.0
 requests==2.24.0
-numpy==1.18.5
+numpy==1.19.0
 Pillow==7.2.0
 tensorflow==2.1.0
