@@ -1,5 +1,5 @@
 pytest==5.4.3
-opencv_python==4.2.0.34
+opencv_python==4.3.0.36
 Flask==1.1.2
 six==1.15.0
 requests==2.24.0
