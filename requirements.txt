@@ -1,4 +1,4 @@
-pytest==6.1.1
+pytest==6.1.2
 opencv_python==4.4.0.44
 Flask==1.1.2
 six==1.15.0
